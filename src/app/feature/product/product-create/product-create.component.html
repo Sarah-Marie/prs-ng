@@ -1,0 +1,67 @@
+<app-menu></app-menu>
+
+<div *ngIf="product" class="component">
+    <p *ngIf='!product'>Loading...</p>
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span> | <a routerLink="/products/list">Return to Product List</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+           
+            <tr>
+                <td>Vendor</td>
+                <td>
+                    <select [(ngModel)]="product.vendor" class="rounded">
+                        <option *ngFor="let vendor of vendors" [ngValue]='vendor'>{{vendor.name}}</option>
+                    </select>    
+                </td>
+            </tr>
+            <tr>
+                <td>Part Number</td>
+                <td>
+                    <input [(ngModel)]="product.partNumber" class="rounded" type="text">
+                        
+                       
+                </td>
+                
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="product.name" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    <input [(ngModel)]="product.price" class="rounded" type="number">
+                        
+                       
+                </td>
+                
+            </tr>
+            <tr>
+                <td>Unit</td>
+                <td><input [(ngModel)]="product.unit" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td>
+                    <select [(ngModel)]="product.photoPath" class="rounded" type="text">
+                        
+                    </select>    
+                </td>
+                
+            </tr>
+           
+            
+        </table>
+    </main>
+    <span>
+        
+        <button (click)="create()" class="btn btn-sm btn-primary">Create</button></span>
+    
+
+
+</div>
+
+

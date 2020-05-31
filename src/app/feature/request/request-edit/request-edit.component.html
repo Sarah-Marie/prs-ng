@@ -1,0 +1,60 @@
+<div *ngIf="request" class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span> | <a routerLink="/requests/list">Return to List</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+           
+            <tr>
+                <td>User ID</td>
+                <td>
+                    <input [(ngModel)]="request.user.id" class="rounded" type="text">
+                        
+                  
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <input [(ngModel)]="request.description" class="rounded" type="text">
+                        
+                  
+                </td>
+                
+            </tr>
+            <tr>
+                <td>Justification</td>
+                <td><input [(ngModel)]="request.justification" class="rounded" type="text"></td>
+            </tr>
+            <tr>
+                <td>Date Needed</td>
+                <td><input [(ngModel)]="request.dateNeeded" class="rounded" type="date"></td>
+            </tr>
+            
+            <tr>
+                <td>Delivery Mode</td>
+                <td>
+                    <select [(ngModel)]="request.deliveryMode" class="rounded">
+                    
+                        <option>Ship</option>
+                        <option>Local Pick-up</option>
+                    </select>
+            </tr>
+            
+                <tr>
+                    <td>Total</td>
+                    <td><input [(ngModel)]="request.total" class="rounded" type="number"></td>
+                </tr>
+             
+            
+        </table>
+    </main>
+    <span>
+        
+        <button (click)="save()" class="btn btn-sm btn-primary">Edit</button></span>
+    
+
+
+</div>
+

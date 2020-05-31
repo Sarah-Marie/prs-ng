@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+<section class="heading">
+
+<span class="component-title font-weight-bold font-italic">{{title}}</span>
+<span> | <a routerLink="/requests/list">Return To List</a></span>
+</section>
+<table *ngIf="requests" class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Description</th>
+            <th>Justification</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Action</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <td>{{ request.id }}</td>
+            <td>{{ request.user.userName }}</td>
+            <td>{{ request.description }}</td>
+            <td>{{ request.justification }}</td>
+            <td>{{ request.total | currency }}</td>
+            <td>{{ request.status }}</td>
+        
+            <td>
+                <a routerLink='/requests/approve/{{request.id}}'> 
+                    <img width='20' height='20' src='assets/review.png' title='Review'>
+                </a> | 
+                   
+                </td>
+        </tr>
+    </tbody>
+</table>
+
+
